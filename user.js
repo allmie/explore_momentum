@@ -1,7 +1,6 @@
 const userTitle = document.querySelector(".user-title")
 const userForm = document.querySelector(".user-form");
-const doListForm = document.querySelector(".do-list-form");
-const user = userForm.querySelector("#username");
+const username = userForm.querySelector("#username");
 const doInput = document.querySelector("#to-do");
 
 const localStorageKey = "username";
@@ -14,7 +13,7 @@ const checkUser = () => localStorage.getItem(localStorageKey);
 
 const submitUser = (e) => {
     e.preventDefault();
-    saveUser(user.value);
+    saveUser(username.value);
     userCheck();
 };
 
@@ -23,11 +22,11 @@ const userCheck = () => {
         const h2 = document.createElement("h2");
         h2.innerHTML = checkUser();
     
-        userForm.removeChild(user);
+        userForm.removeChild(username);
         userTitle.append(h2);
         doInput.type = "text";
     }else{
-        userForm.appendChild(user);
+        userForm.appendChild(username);
         doInput.type = "hidden";
     }
 };
