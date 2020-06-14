@@ -8,16 +8,16 @@ const loadTime = () => {
     const seconds = time.getSeconds();
     
     clock.innerHTML = `${
-        hours < 10 ? `0{hours}` : hours
+        hours < 10 ? `0${hours}` : hours
     }:${
-        minutes < 10 ? `0{minutes}` : minutes
+        minutes < 10 ? `0${minutes}` : minutes
     }:${
         seconds < 10 ? `0${seconds}` : seconds}`
 }
 
-const init = () => {
+const initClock = () => {
     loadTime();
     setInterval(loadTime, 1000);
 };
 
-init();
+initClock();
