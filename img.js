@@ -15,7 +15,6 @@ const getRandom = () => Math.floor(Math.random() * num);
 const initBackImg = () => {
     const randNum = getRandom();
     paintImg(randNum);
-    console.log(randNum);
 };
 
 initBackImg();

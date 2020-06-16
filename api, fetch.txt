@@ -1,0 +1,15 @@
+get Location
+
+- navigator 사용
+
+
+javasccript는 web으로 req - res 받아, refresh 없이 페이지에 적용
+
+
+fetch()
+: 데이터를 가져옴
+fetch().then()
+: 데이터를 가져온 다음, 함수 호출
+
+api
+: 다른 서버로부터 쉽게 데이터를 가져옴
