@@ -10,7 +10,7 @@ const saveToDos = () => {
 };
 
 const delList = (e) => {
-    const {target: {parentNode}}= e;
+    const { target: { parentNode } } = e;
     parentNode.remove();
     const newToDos = toDos.filter(item => parseInt(parentNode.id) != item.id);
     toDos = newToDos;
@@ -18,20 +18,22 @@ const delList = (e) => {
 };
 
 const createToDo = (toDo) => {
+    const toDoSpan = document.createElement("span");
     const toDoItem = document.createElement("li");
     const delBtn = document.createElement("button");
 
     delBtn.addEventListener("click", delList);
-    
+
     const toDoObj = {
         id: toDos.length + 1,
-        do: toDo        
+        do: toDo
     };
     toDos.push(toDoObj);
 
-    toDoItem.innerText = toDo;
-    toDoItem.id = toDoObj.id;
+    toDoSpan.innerText = toDo;
     delBtn.innerText = "X";
+    toDoItem.id = toDoObj.id;
+    toDoItem.appendChild(toDoSpan);
     toDoItem.appendChild(delBtn);
     toDoList.appendChild(toDoItem);
 };
